@@ -89,10 +89,10 @@ namespace BackgroundTunes
         {
             try
             {
-                // Create a custom icon for the tray
+                // Use the application's own icon for the tray
                 trayIcon = new NotifyIcon
                 {
-                    Icon = CreateMusicIcon(),
+                    Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath),
                     Text = APP_NAME,
                     Visible = true
                 };
@@ -679,27 +679,8 @@ namespace BackgroundTunes
         {
             try
             {
-                // Create a simple music note icon
-                var bitmap = new Bitmap(16, 16);
-                using (var graphics = Graphics.FromImage(bitmap))
-                {
-                    graphics.Clear(Color.Transparent);
-                    
-                    // Draw a simple music note
-                    using (var pen = new Pen(Color.FromArgb(0, 122, 204), 2))
-                    {
-                        // Draw a note head
-                        graphics.FillEllipse(Brushes.White, 8, 8, 4, 4);
-                        graphics.DrawEllipse(pen, 8, 8, 4, 4);
-                        
-                        // Draw the stem
-                        graphics.DrawLine(pen, 10, 8, 10, 2);
-                        
-                        // Draw the flag
-                        graphics.DrawArc(pen, 6, 2, 8, 6, 0, 180);
-                    }
-                }
-                return Icon.FromHandle(bitmap.GetHicon());
+                // Use the application's own icon for the tray
+                return Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             }
             catch (Exception ex)
             {

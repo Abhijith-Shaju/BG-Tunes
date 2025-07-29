@@ -14,6 +14,7 @@
     <Version>1.0.0</Version>
     <FileVersion>1.0.0.0</FileVersion>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <ApplicationIcon>BG-Tunes.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +24,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\*.mp3" />
+    <None Include="BG-Tunes.ico" />
   </ItemGroup>
 
 </Project> 
