@@ -1,4 +1,0 @@
-C:\Users\abhij\Study Materials\Codes\Personal_Projects\Background_Tunes\obj\Debug\net6.0\GenerateAudio.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\abhij\Study Materials\Codes\Personal_Projects\Background_Tunes\obj\Debug\net6.0\GenerateAudio.AssemblyInfoInputs.cache
-C:\Users\abhij\Study Materials\Codes\Personal_Projects\Background_Tunes\obj\Debug\net6.0\GenerateAudio.AssemblyInfo.cs
-C:\Users\abhij\Study Materials\Codes\Personal_Projects\Background_Tunes\obj\Debug\net6.0\GenerateAudio.csproj.CoreCompileInputs.cache

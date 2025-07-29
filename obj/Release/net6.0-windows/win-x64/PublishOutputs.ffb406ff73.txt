@@ -1,2 +1,0 @@
-C:\Users\abhij\Study Materials\Codes\Personal_Projects\Background_Tunes\bin\Release\net6.0-windows\win-x64\publish\BackgroundTunes.pdb
-C:\Users\abhij\Study Materials\Codes\Personal_Projects\Background_Tunes\bin\Release\net6.0-windows\win-x64\publish\BackgroundTunes.exe
