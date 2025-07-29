@@ -567,7 +567,19 @@ namespace BackgroundTunes
                 }
                 else if (isPlaying && !isPausedByDevice)
                 {
-                    // Song ended, restart
+                    // Song ended, restart from beginning
+                    if (audioFile != null)
+                    {
+                        audioFile.Position = 0; // Reset to beginning
+                    }
+                    
+                    // Recreate WaveOutEvent for clean restart
+                    if (waveOut != null)
+                    {
+                        waveOut.Dispose();
+                        waveOut = null;
+                    }
+                    
                     Play();
                 }
             }
