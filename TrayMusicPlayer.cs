@@ -285,6 +285,13 @@ namespace BackgroundTunes
         {
             try
             {
+                // Stop current playback if any
+                if (waveOut != null && isPlaying)
+                {
+                    waveOut.Stop();
+                    isPlaying = false;
+                }
+
                 if (audioFile != null)
                 {
                     audioFile.Dispose();
@@ -325,6 +332,13 @@ namespace BackgroundTunes
                     CreateFallbackAudio();
                 }
                 // For "No songs found" or "Error loading songs", audioFile remains null
+                
+                // Reset WaveOutEvent for new song
+                if (waveOut != null)
+                {
+                    waveOut.Dispose();
+                    waveOut = null;
+                }
                 
                 UpdateSongDisplay();
             }
@@ -465,6 +479,8 @@ namespace BackgroundTunes
                 {
                     waveOut = new WaveOutEvent();
                     waveOut.PlaybackStopped += WaveOut_PlaybackStopped;
+                    // Initialize the audio file for first play
+                    waveOut.Init(audioFile);
                 }
 
                 if (isPausedByDevice)
@@ -472,8 +488,7 @@ namespace BackgroundTunes
                     isPausedByDevice = false;
                 }
 
-                audioFile.Position = 0; // Start from beginning
-                waveOut.Init(audioFile);
+                // Resume from current position (don't reset to beginning)
                 waveOut.Play();
                 isPlaying = true;
 
@@ -519,6 +534,13 @@ namespace BackgroundTunes
                     waveOut.Stop();
                     isPlaying = false;
                     isPausedByDevice = false;
+                    
+                    // Reset song to beginning
+                    if (audioFile != null)
+                    {
+                        audioFile.Position = 0;
+                    }
+                    
                     UpdateStatus("Stopped", currentDeviceName);
                     UpdatePlayPauseButton("Play");
                 }
@@ -680,7 +702,8 @@ namespace BackgroundTunes
             try
             {
                 // Use the application's own icon for the tray
-                return Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+                var icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+                return icon ?? SystemIcons.Application;
             }
             catch (Exception ex)
             {
