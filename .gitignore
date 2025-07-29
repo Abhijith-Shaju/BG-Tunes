@@ -1,0 +1,46 @@
+# .gitignore for BG-Tunes (C# WinForms, NAudio, Embedded MP3s)
+
+# Build and publish output
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Publish output
+publish/
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Do NOT ignore embedded resources
+!Resources/*.mp3
+
+# Do NOT ignore documentation
+!README.md
+!INSTALLATION.md
+
+# Do NOT ignore scripts
+!install-to-start-menu.bat
+
+# Ignore test results
+TestResults/
+
+# Ignore local settings
+*.local.json 
