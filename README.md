@@ -17,7 +17,7 @@ A lightweight, modern system tray music player for Windows with built-in device 
 - Two songs are included in the app
 
 ### Optional: Add to Windows Search
-- Run `install-to-start-menu.bat` (included) to add BG-Tunes to your Start Menu for easy search.
+- Run `install-to-start-menu.bat` (included) to add BG-Tunes to your Start Menu for easy search. 
 
 ---
 
